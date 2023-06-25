@@ -1,0 +1,37 @@
+Q1 --> The command outputs "true" because the command on the left evaluates to true because the values are compared as
+if they were strings and in such a situation 13 would evaluate to being less than 2, and the second half of the
+	command would execute since the first half succeeded, as the '&&' acts similar to a logical AND and requires that the
+	result of the command/expression on the left to be true or to execute successfully before the command on the right
+	can be executed.
+
+Q2 --> When in the same directory with the mySettings containing the word "chocolate" the output is "All we have to
+decide is what to do with the chocolate that is given us...", but if there is no file name mySettings containing the
+word chocolate in the working directory, there is no output printed to the shell.
+
+Q3 --> The value "2" is shown in the shell.  The command assigns 13 to the variable "x" and then echoes the result of
+dividing that value of 13 by 5 and the number 2 is returned as the rounded down result from the division.
+
+Q4 --> The output of the commands is a 0, and that stands for the return value from the command run previously. A return
+status/value of 0 tends to mean that the last command ran successfully, but a return status above 0 could mean there was
+an error or some type of failure in the execution of  the previous command.
+
+Q5 --> The outputs are "5 12 13" and then "5 13". The outputs are different due to the difference in how the commands
+were run. The second command line -- "( x=12 ; echo "5 $x 13" )" only assigned the value of 12 to the variable x within
+a sub shell, but in the third command where "echo '5 $x 13'" is run, the value assigned to x was unset by the first command we
+ran, hence only 5 and 13 were outputted to the shell.
+
+Q6 --> This command outputs each word in the file "blah" line by line the result was :
+					Item
+					Another
+					Item
+Q7 --> This command also outputs the contents of the file but in a different way, each line of the file is outputted
+line by line in the same way as they are seen within the blah file. The result is:
+
+			Item
+			Another Item
+
+Q8 --> Similar to the previous command the output is the contents of the file blah line by line rather than word by word
+like in the first command
+			Item 
+			Another Item
+

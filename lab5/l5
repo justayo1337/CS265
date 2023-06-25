@@ -1,0 +1,26 @@
+Q1 --> When I tested the executable file created from compiling with gcc there is a value other than 0 assigned to the
+local variable i but with tcc , all the values correctly show 0 or 0.00000 as they had not been explicitly assigned
+any values. I actually expected an error of some sort given that the variables were initialized explicitly and I did
+not expect that there was a default value for locally created integer variables .when using the gcc compiler
+The results were: 
+lab5> ./uninit-gcc
+Globals:  gi is 0, and gx is 0.000000
+Locals:  i is 32767, and x is 0.000000
+
+lab5> ./uninit-tcc
+Globals:  gi is 0, and gx is 0.000000
+Locals:  i is 0, and x is 0.000000
+
+Q3 --> The answers are:
+before: i = 5 | j = 3
+a.)i = 8 | j = 3
+b.)i = 3 | j = 4
+c.)i = 4 | j = 4
+d.)i = 5; j=3 || i % j = 2
+e.) i = 5; j= 4 || i % j++ = 2
+
+Q4 --> One difference is that the `getchar` method actually returns an integer value for the charater received and
+that makes it possible for the value received to also be stored in an integer variable. The `getchar` function also
+returns the character it reads unlike `scanf` which makes it quite useful whhen used with things like loops
+
+Q5 --> x = 12.300000; y = 0.600000 ; i= 45

@@ -1,0 +1,12 @@
+#!/bin/bash 
+
+mainDir="/usr/share/dict/words"
+
+if [ -e "sign.c" -a  ! -e "sign" ] ; then
+	gcc sign.c -o sign >& /dev/null
+{ ./sign < $mainDir | sort ; } |  awk -f squash.awk | awk '{ print NF,$0 }' | sort -nr | head -8
+elif [ -e "sign" ] 
+then 
+   { ./sign < $mainDir | sort ; } |  awk -f squash.awk | awk '{ print NF,$0 }' | sort -nr | head -8 
+
+fi

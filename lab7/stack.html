@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Expires" content="no-expire">
+	<meta name="Author" content="Kurt Schmidt"><meta name="Copyright" content="">
+	<meta name="Publisher" content="Drexel University">
+	<meta name="Keywords" content="Programming Techniques Unix">
+	<meta name="Description"
+		content="Lab for CS265 - Adv. Programming Techniques">
+	<meta name="Pagetype" content="Lab">
+	<meta name="Audience" content="All">
+	<link rel='shortcut icon' type='image/gif'
+		href='../../../images/drexel.gif'></link>
+	<script language="JavaScript" src="../../courseInfo.js"></script>
+	<script language="JavaScript" src="../../../Scripts/courseFormat.js"></script>
+	<title> Lab -- Array-based Stack </title>
+	<link href="../labs.css" rel="stylesheet" type="text/css">
+</head>
+
+<body text="#330099" link="#000066" vlink="#000066" alink="#ff0000"
+	background="../../../images/blueTexture.jpeg">
+
+<h1> Lab &ndash; Array-based Stack </h1>
+
+<p> The directory for this lab is <span class='fn'>~kschmidt/public_html/CS265/Labs/C/Stack2</span> . </p>
+
+
+<h3> Introduction </h3>
+
+<p> Approaching the stack presented in chapter 19 of your text. </p>
+
+<!-- TODO -->
+
+<h3> The Exercises </h3>
+
+<ol>
+	<li>
+		<p> Look at the files for this lab.  This stack is very much like the one we looked at in this week's activity, with
+			one notable change.  The underlying array is allocated off the heap, so that it can grow; </p>
+
+			<div class='code'>
+<pre>struct stack-arr 
+{
+   ELEM *arr ;
+   size_t size ;
+   size_t cap ;
+}</pre>
+			</div>
+
+		<p> I replaced the <span class='code'>init</span> function with a factory function, <span
+			class='code'>mkStack</span>, which returns a pointer to a new (and initialised) stack from the heap.  The client
+			should start with a pointer, and call this method to get a new stack.  I moved the struct itself into the
+			implementation file. </p>
+
+		<p> Your job is to define the <span class='code'>stackResize</span> function.  See <span class='fn'>stack.c</span> .
+		</p>
+
+		<script><!--
+			q = "Place your function in your labsheet, with nice formatting.\n"
+			q += "Consider Vim's <span class='cmd'>:r</span> (read) command, or use Bash redirect/append."
+			question( q ) 
+			//--></script>
+	</li>
+
+
+</ol>
+</body></html>

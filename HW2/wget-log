@@ -1,0 +1,6 @@
+--2022-08-05 07:33:16--  https://learn-us-east-1-prod-fleet01-xythos.content.blackboardcdn.com/blackboard.learn.xythos.prod/5a3199fc4282a/13675442?X-Blackboard-Expiration=1659711600000
+Resolving learn-us-east-1-prod-fleet01-xythos.content.blackboardcdn.com (learn-us-east-1-prod-fleet01-xythos.content.blackboardcdn.com)... 104.18.27.130, 104.18.26.130, 2606:4700::6812:1a82, ...
+Connecting to learn-us-east-1-prod-fleet01-xythos.content.blackboardcdn.com (learn-us-east-1-prod-fleet01-xythos.content.blackboardcdn.com)|104.18.27.130|:443... connected.
+HTTP request sent, awaiting response... 403 Missing Signature
+2022-08-05 07:33:16 ERROR 403: Missing Signature.
+

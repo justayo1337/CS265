@@ -1,0 +1,55 @@
+#!/bin/bash
+#
+# random - shoing $RANDOM to get randome number arithmetically and 
+#   /dev/urandom to get more general strings, lexically
+#
+# EDITOR:  tabstop=2, cols=120
+#
+# GNU bash, version 4.4.20(1)-release (x86_64-pc-linux-gnu) (2016?)
+#
+# See also:  apg, /dev/random, fold -w , Mac keychain ...
+#
+
+echo "When evaluated, \$RANDOM yields a number on [ 0, 2^31-1 ] ( [0, 32,767] )"
+echo "To generate a number on the interval [a, b], try \$(( a + RANDOM % (b-a+1) ))"
+echo "Note, unless b-a << 2^31, then this will not be a nice distribution.  Use something better."
+echo ""
+
+read -p "Enter low number => " low
+read -p "Enter high number => " high
+echo ""
+read -p "Wanna see a number ([y]/n)? => " resp
+
+while [[ ! "$resp" =~ [Nn] ]] ; do
+	echo -e "$(( low + RANDOM % (high-low+1) ))\n"
+	read -p "Wanna see a number ([y]/n)? => " resp
+done
+
+ind="  "
+
+echo -e "\n\nFor better distribution, /dev/urandom is a character special file, not unlike /dev/null,"
+echo "yields an infinite stream of characters."
+echo -e "${ind}Note, some of these are non-printing.  Don't stream to the terminal."
+
+echo -e "\nWe'll need some other tools here:"
+
+echo -e "${ind}tr -d (translate) can be used to remove listed characters from a stream"
+echo -e "${ind}${ind}-c (complement) inverts the characters filtered, so, list those wanted.\n"
+echo -e "${ind}${ind}Use tr -dc <chars> to describe the characters."
+
+echo -e "${ind}head -c<n> produces first <n> characters, rather than lines."
+
+echo -e "\nPutting it together (length of 8 characters:"
+
+echo -e "${ind}All numbers:  tr -dc '0-9' < /dev/urandom | head -c8"
+echo "${ind}${ind}$(tr -dc '0-9' < /dev/urandom | head -c8)"
+
+echo -e "${ind}Numbers, uppercase:  tr -dc '0-9A-Z' < /dev/urandom | head -c8"
+echo "${ind}${ind}$(tr -dc '0-9A-Z' < /dev/urandom | head -c8)"
+
+echo -e "${ind}Numbers, letters, _ $ % ^ @:  tr -dc '0-9A-Za-z_$%^@' < /dev/urandom | head -c8"
+echo "${ind}${ind}$(tr -dc '0-9A-Za-z_$%^@' < /dev/urandom | head -c8)"
+
+echo -e "${ind}Any printing character:  tr -dc '[:graph:]' < /dev/urandom | head -c8"
+echo "${ind}${ind}$(tr -dc '[:graph:]' < /dev/urandom | head -c8)"
+

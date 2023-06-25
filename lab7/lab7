@@ -1,0 +1,111 @@
+Q2.1
+/*
+*Function: binSearch
+*----------------------
+*searches for the position of a given integer within a given array of integers
+*
+*arr: the array of integers, assumed to be in ascending order
+*n: the size of the array
+*goal: the integer to search for
+*
+*returns: the index of the target element if found, otherwise returns the size of the array 'n'
+
+*/
+int binSearch(int *arr, size_t n, int goal){
+ int start = 0;
+ int end = n-1;
+ int mid;
+
+while (start <= end ) {
+ mid = (end+start)/2;
+if (arr[mid] == goal){
+      return mid ;
+   } else if (arr[mid] > goal) {
+        end= mid -1;
+   } else if (arr[mid]  < goal ) {
+      start = mid + 1;
+}/*else{
+   return n;
+}*/}
+return n;
+}
+
+------------------------------------------------------------------------------------
+
+Q2.2
+/*
+*Function: arrStats
+*----------------------
+*takes an array of doubles  and computes the arithmetic mean, max and min as doubles.
+*
+*arr: the array of doubles
+*n: the size of the array
+*mean: pointer to a double to store the value of the mean
+*min: pointer to a double to store the value of the minimum value
+*max: pointer to a double to store the value of the maximum value
+*
+*returns: NULL
+
+*/
+void arrStats(double *arr, size_t n, double *mean, double *min, double *max) {
+ double total;
+ *min = *(arr) ;
+ *max = *(arr);
+for (int i = 0; i < n ; ++i) {
+ total += *(arr+i);
+  *min =  (*(arr+i) < *min ) ? *(arr+i) : *min;
+  *max =  (*(arr+i) > *max ) ? *(arr+i) : *max;
+}
+*mean = total/n;
+
+}
+-------------------------------------------------------------------------------------------
+
+Q2.3
+`/*
+*Function: arrFind
+*----------------------
+*takes an array of integers and searches for a specified integer (target)
+*
+*arr: the array of integers
+*n: the size of the array
+*target: the integer to be searched for within the array(arr)
+*
+*returns: Pointer to the first occurence of the integer in the array or NULL if the integer is not found in the array
+
+*/
+int *arrFind(int *arr, size_t n, int target) {
+for ( int i = 0; i< n ; ++i){
+if (*(arr+i) == target) {
+   return arr+i;
+}else {
+   continue;
+}}
+
+
+return NULL; }`
+
+----------------------------------------------------------------------------------------------
+
+Q3.1
+/*
+*Function: capitalise
+*----------------------
+*takes a string and capitalises all the letters
+*
+*str: the string to be capitalised
+*
+*returns: NULL
+
+*/
+
+void capitalise(char* str){
+  int cnt = 0;
+   while (*(str+cnt) != '\0'){
+      if (islower(*(str+cnt)) ) {
+             *(str+cnt) = toupper(*(str+cnt));
+      }
+   ++cnt;
+   }
+}
+

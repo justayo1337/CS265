@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# hello - quick example bash script
+#
+# Kurt Schmidt
+# 3.10.12
+#
+# bash 4.2.24 on Linux 3.2.0-25
+#
+# EDITOR:
+#    tabstop=2
+#    columns=120
+#
+
+echo "Hello World"   # This is a comment, too
+echo "My name is $USER"
+
+read -p "What is your name? => " name
+
+exit 13  # celebrating a nice number
+
+if [ -n "$1" ] ; then
+	echo -e "\nI got an argument: $1\n"
+fi
+

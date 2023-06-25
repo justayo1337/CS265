@@ -1,0 +1,20 @@
+#include <stdio.h>
+#define MAX 100 
+#include <stdlib.h>
+double arrAvg(double *arr, size_t arrSize){
+
+return 0
+}
+
+
+void main(){
+  char *buff;
+  size_t len;
+  int cnt = 0;
+  double inputs[MAX];
+	while(getline(&buff,&len,stdin) > 1) {
+	inputs[cnt] = atof(buff);
+	++cnt;
+	}
+  arrAvg(inputs,sizeof(inputs));
+}

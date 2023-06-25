@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+
+start=${1:-.}
+
+function proc_dir {
+	local dir="$1" f
+	
+	[ -z "$1" ] && return 1
+	[ -d "$1" ] || return 2
+
+	echo $dir
+
+	for f in "$dir"/* ; do
+		if [ -d "$f" ] ; then
+			proc_dir "$f"
+		fi
+	done
+}
+
+
+proc_dir "$start"
+

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Expires" content="no-expire">
+	<meta name="Author" content="Kurt Schmidt"><meta name="Copyright" content="">
+	<meta name="Publisher" content="Drexel University">
+	<meta name="Keywords" content="Programming Techniques Unix">
+	<meta name="Description"
+		content="Lab for CS265 - Adv. Programming Techniques">
+	<meta name="Pagetype" content="Lab">
+	<meta name="Audience" content="All">
+	<link rel='shortcut icon' type='image/gif'
+		href='../../../images/drexel.gif'></link>
+	<script language="JavaScript" src="../../courseInfo.js"></script>
+	<script language="JavaScript" src="../../../Scripts/courseFormat.js"></script>
+	<title> Lab -- C Lists </title>
+	<link href="../labs.css" rel="stylesheet" type="text/css">
+</head>
+
+<body text="#330099" link="#000066" vlink="#000066" alink="#ff0000"
+	background="../../../images/blueTexture.jpeg">
+
+<h1> Lab &ndash; C Lists </h1>
+
+<p kurt='fool'> The directory for this lab is <span class='fn'>~kschmidt/public_html/CS265/Labs/C</span> . </p>
+
+
+<h3> Introduction </h3>
+
+<p> We will test your code using the <span class='cmd'>gcc</span> compiler. </p>
+
+<p> Unless otherwise stated, lists will be singly-linked, made of <span class='code'>sNode</span>s: </p>
+
+<div class='code'>
+<pre>typedef struct sNode sNode ;
+
+struct sNode
+{
+   int data ;
+   sNode* next ;
+}</pre>
+</div>
+
+<!-- TODO -->
+
+<h3> The Exercises </h3>
+
+<ol>
+	<li>
+		<p> Write a function that takes a list, returns its length.  You may assume that it contains no cycles. </p>
+
+			<div class='code'>
+				size_t listLength( const sNode *L ) ;
+			</div>
+
+		<script><!--
+			q = "Place your function, with function header comments, in your labsheet, with formatting.\n"
+			q += "Consider Vim's <span class='cmd'>:r</span> (read) command, or use Bash redirect/append."
+			question( q ) 
+			//--></script>
+	</li>
+
+	<li> 
+		<p> Write a function that reverses a list, in place.  That is, you will not allocate any more heap memory, just
+		modify the next points of the existing nodes.  Return pointer to new list. </p>
+
+			<div class='code'>
+				sNode* listRev( sNode *L ) ;
+			</div>
+
+		<p> I'd recommend three pointers, keep track of the previous, and the next.  You'll have a border case to deal with,
+		perhpas two. </p>
+
+		<script><!--
+			q = "Place the function in your labsheet, with formatting.\n"
+			q += "Consider Vim's <span class='cmd'>:r</span> (read) command, or use Bash redirect/append."
+			question( q ) 
+			//--></script>
+	</li>
+
+</ol>
+</body></html>

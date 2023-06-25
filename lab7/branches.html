@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Expires" content="no-expire">
+	<meta name="Author" content="Kurt Schmidt"><meta name="Copyright" content="">
+	<meta name="Publisher" content="Drexel University">
+	<meta name="Keywords" content="Programming Techniques Unix">
+	<meta name="Description"
+		content="Lab for CS265 - Adv. Programming Techniques">
+	<meta name="Pagetype" content="Lab">
+	<meta name="Audience" content="All">
+	<link rel='shortcut icon' type='image/gif'
+		href='../../../images/drexel.gif'></link>
+	<script language="JavaScript" src="../../courseInfo.js"></script>
+	<script language="JavaScript" src="../../../Scripts/courseFormat.js"></script>
+	<title> Lab -- C Branches </title>
+	<link href="../labs.css" rel="stylesheet" type="text/css">
+</head>
+
+<body text="#330099" link="#000066" vlink="#000066" alink="#ff0000"
+	background="../../../images/blueTexture.jpeg">
+
+<h1> Lab &ndash; C Branches </h1>
+
+<p kurt='fool'> The directory for this lab is <span class='fn'>~kschmidt/public_html/CS265/Labs/C</span> . </p>
+
+
+<h3> Introduction </h3>
+
+<p> We will test your code using the <span class='cmd'>gcc</span> compiler. </p>
+
+<!-- TODO -->
+
+<h3> The Exercises </h3>
+
+<ol>
+	<h4> Boolean Expressions </h4>
+
+	<li> Consider the following initialisations:
+
+<div class='code'>
+<pre>int i = 5 ,
+    j = 12 ,
+    k = -13 ,
+    z = 0 ;</pre>
+</div>
+
+		<script><!--
+			q = "Evaluate each of the following expressions.  They all evaluate to an integer.\n"  
+			q += "Use 0 for false, and 1 for true"
+			question( q ) 
+			//--></script>
+
+		<ol type='a'>
+			<li> <span class='code'> j &lt; i </span> </li>
+			<li> <span class='code'> ! j &lt; i </span> </li>
+			<li> <span class='code'> (! j) &lt; i </span> </li>
+			<li> <span class='code'> i + j </span> </li>
+			<li> <span class='code'> !i + j </span> </li>
+			<li> <span class='code'> !!i + !j </span> </li>
+			<li> <span class='code'> j &amp;&amp; k </span> </li>
+			<li> <span class='code'> i &amp;&amp; j || z </span> </li>
+			<li> <span class='code'> i &amp;&amp; ( j || z ) </span> </li>
+		</ol>
+	</li>
+
+	<h4> If Statements </h4>
+
+	<li> 
+		<p> A leap year must be divisible by 4.  If the year is divisible by 100 it is <em>not</em> a leap year, unless it
+			is also divisble by 400. </p>
+
+		<p> Write a program called <span class='fn'>leap.c</span> which prompts the user for a year (as an <span
+			class='code'>int</span>), prints <span class='code'>YES</span> if the input year is a leap year, and <span
+			class='code'>NO</span> otherwise. </p>
+
+		<script><!--
+			q = "Submit <span class='fn'>leap.c</span>, neatly formatted, and with header comments, with your lab.\n"
+			question( q ) 
+			//--></script>
+	</li>
+
+
+</ol>
+</body></html>

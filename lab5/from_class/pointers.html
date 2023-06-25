@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Expires" content="no-expire">
+	<meta name="Author" content="Kurt Schmidt"><meta name="Copyright" content="">
+	<meta name="Publisher" content="Drexel University">
+	<meta name="Keywords" content="Programming Techniques Unix">
+	<meta name="Description"
+		content="Lab for CS265 - Adv. Programming Techniques">
+	<meta name="Pagetype" content="Lab">
+	<meta name="Audience" content="All">
+	<link rel='shortcut icon' type='image/gif'
+		href='../../../images/drexel.gif'></link>
+	<script language="JavaScript" src="../../courseInfo.js"></script>
+	<script language="JavaScript" src="../../../Scripts/courseFormat.js"></script>
+	<title> Lab -- C Pointers </title>
+	<link href="../labs.css" rel="stylesheet" type="text/css">
+</head>
+
+<body text="#330099" link="#000066" vlink="#000066" alink="#ff0000"
+	background="../../../images/blueTexture.jpeg">
+
+<h1> Lab &ndash; C Pointers </h1>
+
+<p kurt='fool'> The directory for this lab is <span class='fn'>~kschmidt/public_html/CS265/Labs/C</span> . </p>
+
+
+<h3> Introduction </h3>
+
+<p> We will test your code using the <span class='cmd'>gcc</span> compiler. </p>
+
+<!-- TODO -->
+
+<h3> The Exercises </h3>
+
+<ol>
+	<li>
+		<p> Write a function, <span class='code'>binSearch</span>, which takes an array of <span
+			class='code'>integer</span>s , along with <span class='code'>n</span>, the number of elements in the array (as a
+			<span class='code'>size_t</span>), and an <span class='code'>int</span> to search for (target), and returns the
+			index of the target element if found, <span class='code'>n</span> otherwise.  (Remember, <span
+			class='code'>n</span> is not a valid index, so, it's a fine sentinel.  <span class='code'>size_t</span> is
+			unsigned, so, -1 maybe won't work as we'd hope.) </p>
+
+		<p> You will use the Binary Search.  Look it up, if you are unfamiliar with it.  You will assume that the array is
+			sorted ascendingly. </p>
+
+		<script><!--
+			q = "Place your function, with function header comments, in your labsheet, with formatting.\n"
+			q += "Consider Vim's <span class='cmd'>:r</span> (read) command, or use Bash redirect/append."
+			question( q ) 
+			//--></script>
+	</li>
+
+	<li>
+		<p> Write a function, <span class='code'>arrStats</span>, which takes an array of <span class='code'>double</span>s
+			, along with the array's length (as a <span class='code'>size_t</span>), and computes the arithmetic mean, max,
+			and min, as doubles. </p>
+
+		<p> Since we can't return 3 values (yet), the function will be of type <span class='code'>void</span>.  It will need
+			to take 3 more arguments, pointers to doubles (buckets to store the answers). </p>
+
+		<p> You may not use square brackets, <span class='code'>[]</span>, anyhwere in your function (other than in
+			comments). </p>
+
+		<script><!--
+			q = "Place your function, with function header comments, in your labsheet, with formatting.\n"
+			q += "Consider Vim's <span class='cmd'>:r</span> (read) command, or use Bash redirect/append."
+			question( q ) 
+			//--></script>
+	</li>
+
+	<li>
+		<p> Write a function, <span class='code'>arrFind</span>, which takes an array of <span class='code'>int</span>s ,
+			along with the array's length (as a <span class='code'>size_t</span>), and a <span class='code'>int</span> to
+			search for (target).  Your function will return a <em>pointer</em> to the first target it finds, or <span
+			class='code'>NULL</span> if not found. </p>
+
+		<p> You may not use square brackets, <span class='code'>[]</span>, anyhwere in your function (other than in
+			comments). </p>
+
+		<script><!--
+			q = "Place your function, with function header comments, in your labsheet, with formatting.\n"
+			q += "Consider Vim's <span class='cmd'>:r</span> (read) command, or use Bash redirect/append."
+			question( q ) 
+			//--></script>
+	</li>
+
+</ol>
+</body></html>

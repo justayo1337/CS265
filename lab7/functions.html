@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Expires" content="no-expire">
+	<meta name="Author" content="Kurt Schmidt"><meta name="Copyright" content="">
+	<meta name="Publisher" content="Drexel University">
+	<meta name="Keywords" content="Programming Techniques Unix">
+	<meta name="Description"
+		content="Lab for CS265 - Adv. Programming Techniques">
+	<meta name="Pagetype" content="Lab">
+	<meta name="Audience" content="All">
+	<link rel='shortcut icon' type='image/gif'
+		href='../../../images/drexel.gif'></link>
+	<script language="JavaScript" src="../../courseInfo.js"></script>
+	<script language="JavaScript" src="../../../Scripts/courseFormat.js"></script>
+	<title> Lab -- C Functions </title>
+	<link href="../labs.css" rel="stylesheet" type="text/css">
+</head>
+
+<body text="#330099" link="#000066" vlink="#000066" alink="#ff0000"
+	background="../../../images/blueTexture.jpeg">
+
+<h1> Lab &ndash; C Functions </h1>
+
+<p kurt='fool'> The directory for this lab is <span class='fn'>~kschmidt/public_html/CS265/Labs/C</span> . </p>
+
+
+<h3> Introduction </h3>
+
+<p> We will test your code using the <span class='cmd'>gcc</span> compiler. </p>
+
+<!-- TODO -->
+
+<h3> The Exercises </h3>
+
+<ol>
+	<li>
+		<p> Write a function, <span class='code'>arrAvg</span>, which takes an array of <span class='code'>double</span>s ,
+			along with the array's length (as a <span class='code'>size_t</span>), and returns the arithmetic mean, as a
+			double. Place this in a C file called <span class='fn'>func1.c</span>.  Include a <span class='code'>main</span>
+			function that reads floats from<span class='fn'>stdin</span>, one per line, and loads an array.  Assume no more
+			than 100 inputs.  Test your function. </p>
+
+		<script><!--
+			q = "Submit <span class='fn'>func1.c</span> with this lab."
+			question( q ) 
+			//--></script>
+	</li>
+
+	<li> 
+		<p> The easiest way to visit each digit in an integer is to visit them from least- to most- significant
+		(right-to-left), using modulus  and division. </p>
+
+		<p> E.g., (working in decimal) 327 % 10 is 7.  We record 7, then divide by 10, so we can now process 32.
+
+		<p> To convert an integer on [0, 9] to a character, just add the character <span class='code'>'0'</span>: </p>
+
+			<div class='code'>
+<pre>char c ;
+int i = 9 ;   // for example
+c = (char) i + '0' ;</pre>
+			</div>
+
+		<p> Write a function called <span class='code'>void int2string( int n, char answer[] )</span>, which parses up
+			non-negative <span class='code'>n</span> (base 10), writes the string into array pointed to by <span
+			class='code'>answer</span>.  Remember to terminate the string properly.  You may (you really have to) assume that
+			answer is an array large enough to hold the result.  </p>
+
+		<p> Your function may <strong>not</strong> call any functions to help you. </p>
+
+		<p> Since you'll be getting the digits in reverse order, you'll want a temporary local array.  You may assume a
+		4-byte integer, which, base 10, will have, at most, 10 digits.  Make sure your function handles an input of 0. </p>
+
+		<p> Place your function into a file called <span class='fn'>func2.c</span>.  Include a <span
+			class='code'>main</span> function which reads integers from <span class='fn'>stdin</span>, one per line (until EOF
+			is signalled). </p>
+
+		<script><!--
+			q = "Submit <span class='fn'>func2.c</span> with this lab."
+			question( q ) 
+			//--></script>
+	</li>
+
+</ol>
+</body></html>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Expires" content="no-expire">
+	<meta name="Author" content="Kurt Schmidt"><meta name="Copyright" content="">
+	<meta name="Publisher" content="Drexel University">
+	<meta name="Keywords" content="Programming Techniques Unix">
+	<meta name="Description"
+		content="Lab for CS265 - Adv. Programming Techniques">
+	<meta name="Pagetype" content="Lab">
+	<meta name="Audience" content="All">
+	<link rel='shortcut icon' type='image/gif'
+		href='../../../images/drexel.gif'></link>
+	<script language="JavaScript" src="../../courseInfo.js"></script>
+	<script language="JavaScript" src="../../../Scripts/courseFormat.js"></script>
+	<title> Lab -- C Structs </title>
+	<link href="../labs.css" rel="stylesheet" type="text/css">
+</head>
+
+<body text="#330099" link="#000066" vlink="#000066" alink="#ff0000"
+	background="../../../images/blueTexture.jpeg">
+
+<h1> Lab &ndash; C Structs </h1>
+
+<p kurt='fool'> The directory for this lab is <span class='fn'>~kschmidt/public_html/CS265/Labs/C</span> . </p>
+
+
+<h3> Introduction </h3>
+
+<p> We will test your code using the <span class='cmd'>gcc</span> compiler. </p>
+
+<!-- TODO -->
+
+<h3> The Exercises </h3>
+
+<ol>
+	<li>
+		<p> Given the following struct definition: </p>
+			<div class='code'>
+<pre>struct time 
+{
+   int hr ;
+   int min ;
+   int sec ;
+}</pre>
+			</div>
+
+		<p> , write a function, </p>
+			<div class='code'>
+				struct time sec2hms( int secs )
+			</div>
+
+		<p> which takes, as an argument, the number of seconds since midnight, and returns the time of day. </p>
+
+		<script><!--
+			q = "Place your function, with function header comments, in your labsheet, with formatting.\n"
+			q += "Consider Vim's <span class='cmd'>:r</span> (read) command, or use Bash redirect/append."
+			question( q ) 
+			//--></script>
+	</li>
+
+	<li> 
+		<p> Copy the file <span class='fn'>readPeople.c</span>.  The <span class='code'>main</span> function should be in
+		fine shape.  You need to finish the function <span class='code'>readPeople</span>, and supply the <span
+		class='code'>freePeople</span> function. </p>
+
+		<h4> <span class='code'>readPeople</span> </h4>
+
+		<p> Given a file handle and an array of null pointers: </p>
+		<ul>
+			<li> Read the information (last name, first name, age ) for a single person </li>
+			<li> Store that information in a <span class='code'>person</span> instance allocated from the heap. </li>
+			<li> Append that instance to the array argument </li>
+			<li> Attempt to read another person </li>
+		</ul>
+
+		<p> Here is a sample input file: </p>
+
+		<div class='file'>
+			Smith <br>
+			Granny <br>
+			68 <br>
+			Tape <br>
+			Scott <br>
+			32 <br>
+			Wire <br>
+			Barbara <br>
+			45
+		</div>
+
+		<p> You may assume: </p>
+
+		<ul>
+			<li> Entries are complete.  If there's a last name, then there's a first name and an age </li>
+			<li> Data is correct.  Age will always convert to an integer. </li>
+		</li>
+
+		<script><!--
+			q = "Place the <span class='code'>readPeople</span> function in your labsheet, with formatting.\n"
+			q += "Consider Vim's <span class='cmd'>:r</span> (read) command, or use Bash redirect/append."
+			question( q ) 
+			//--></script>
+
+		<h4> <span class='code'>freePeople</span> </h4>
+
+		<p> This function simply returns the heap instances pointed to by the array to the heap.  Do not assume that the
+			array is dense.  Check every position for a non-NULL pointer. </p>
+
+		<script><!--
+			q = "Place the <span class='code'>freePeople</span> function in your labsheet, with formatting.\n"
+			q += "Consider Vim's <span class='cmd'>:r</span> (read) command, or use Bash redirect/append."
+			question( q ) 
+			//--></script>
+	</li>
+
+</ol>
+</body></html>

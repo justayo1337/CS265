@@ -1,0 +1,16 @@
+#!/bin/bash 
+
+ls -1a "$PWD" | while read file; do	
+	if [[ "$file" == *.mp3 ]] ; then
+		
+      dir="${file%-*}"
+		filename="${file#* -}"
+		if [[ ! -e "${dir%' '}" ]]; then 
+			mkdir "${dir%' '}"
+ 		fi
+	     mv "$file" "$PWD/${dir%' '}/${filename#' '}"
+##		echo ${dir%' '},${filename#' '} 
+		 
+	fi
+
+done

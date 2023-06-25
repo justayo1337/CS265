@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Expires" content="no-expire">
+	<meta name="Author" content="Kurt Schmidt"><meta name="Copyright" content="">
+	<meta name="Publisher" content="Drexel University">
+	<meta name="Keywords" content="Programming Techniques Unix">
+	<meta name="Description"
+		content="Lab for CS265 - Adv. Programming Techniques">
+	<meta name="Pagetype" content="Lab">
+	<meta name="Audience" content="All">
+	<link rel='shortcut icon' type='image/gif'
+		href='../../../images/drexel.gif'></link>
+	<script language="JavaScript" src="../../courseInfo.js"></script>
+	<script language="JavaScript" src="../../../Scripts/courseFormat.js"></script>
+	<title> Lab -- C Loops </title>
+	<link href="../labs.css" rel="stylesheet" type="text/css">
+</head>
+
+<body text="#330099" link="#000066" vlink="#000066" alink="#ff0000"
+	background="../../../images/blueTexture.jpeg">
+
+<h1> Lab &ndash; C Loops </h1>
+
+<p> The directory for this lab is <span class='fn'>~kschmidt/public_html/CS265/Labs/C</span> . </p>
+
+
+<h2> Introduction </h2>
+
+<p> We will test your code using the <span class='cmd'>gcc</span> compiler. </p>
+
+<!-- TODO -->
+
+<h2> The Exercises </h2>
+
+<ol>
+
+	<li> Use your brain to evaluate the following loop:
+
+<div class='code'>
+<pre>for( i=5, j=i-1; i&gt;0 &amp;&amp; j&gt;0; --i, --j )
+   printf( "%d ", i ) ; </pre>
+</div>
+
+		<script><!--
+			q = "Provide what you think the output will be in your labsheet."
+			question( q ) 
+			//--></script>
+	</li>
+
+	<li> Similarly, point your brain at this loop:
+
+<div class='code'>
+<pre>for( i=10 ; i&gt;=1 ; i/=2 )
+   printf( "%d ", i++ ) ; </pre>
+</div>
+
+		<script><!--
+			q = "Provide what you think the output will be in your labsheet."
+			question( q ) 
+			//--></script>
+	</li>
+
+	<li> In lecture we looked at a go-again loop which defaulted to "no"; that is, unless <span class='code'>y</span> or
+		<span class='code'>Y</span>, the loop exits:
+
+<div class='code'>
+<pre>
+char resp = 'y' ;
+
+while( resp=='y' || resp=='Y' )
+{
+   // processing...
+
+   printf( "\nEnter another input? (y/[n]) => " ) ;
+      // the space preceding the %c tells scanf to skip whitespace
+   scanf( " %c", &resp ) ;
+} </pre>
+</div>
+
+		<p> Modify this code so that the default is to go again, only exiting when <span class='code'>n</span> or
+		<span class='code'>N</span> is entered. </p>
+
+		<script><!--
+			q = "Put this code segment in your labsheet."
+			question( q ) 
+			//--></script>
+	</li>
+
+	<li>	
+		<p> Using, again, <span class='fn'>readlines.c</span> from Activity 6 as a starting point, read numbers (<span
+		class='code'>double</span>s) from the user, prompting for each one.  (So, blank line or EOF to quit.)  After all
+		inputs are read, print out, in neat, tabular form, the max, min, and mean. </p>
+
+		<p> Do <emph>not</emph> store the inputs in an array.  No need. </p>
+
+		<p> Your program must accept negative inputs, also.  Do not use a synthetic max/min.  Take the very first input to
+		be the max and the min, compare subsequent inputs, updating as needed. </p>
+
+		<script><!--
+			q = "Submit <span class='fn'>readlines.c</span> with your lab."
+			question( q ) 
+			//--></script>
+	</li>
+
+	<li>
+		<p> Write a program which reads an integer from the user, <var>n</var>, and creates a right triangle with legs of
+		length <var>n</var> , as follows (example for <var>n</var>=4) : </p>
+
+<div class='output'>
+<pre>****
+***
+**
+*</pre>
+</div>
+
+		<script><!--
+			q = "Call this file <span class='fn'>ult.c</span> and submit it along w/your labsheet."
+			question( q )
+			//--></script>
+
+	</li>
+
+	<li>
+		<p> Write a program which reads an integer from the user, <var>n</var>, and creates a right triangle with legs of
+		length <var>n</var> , as follows (example for <var>n</var>=4) : </p>
+
+<div class='output'>
+<pre>****
+ ***
+  **
+   *</pre>
+</div>
+
+		<script><!--
+			q = "Call this file <span class='fn'>urt.c</span> and submit it along w/your labsheet."
+			question( q )
+			//--></script>
+	</li>
+
+</ol>
+</body></html>

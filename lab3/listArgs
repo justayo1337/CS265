@@ -1,0 +1,20 @@
+#!/bin/bash
+# listArgs - Shows command-line args
+#
+# Kurt Schmidt
+#	1/2020
+# 
+# NOTES:  Run w/quoted input, like:
+#		args.bash a "b c" d
+#
+
+echo "You passed in $# arguments:"
+
+i=0
+while [ ! -z "$1" ] ; do
+	(( i+=1 ))
+	echo -e "$i\t$1"
+	shift
+done
+echo
+

@@ -1,0 +1,50 @@
+
+Q1.1
+Q1.2
+Q1.3
+
+
+Q2.1
+
+size_t listLength( const sNode *L ){
+   sNode *curr = L ;	
+	int len = 0;
+    
+	while (curr != NULL) {
+      ++cnt; 
+		curr = curr->next;
+	} 
+ return len;
+}
+
+size_t listLength( const sNode *L ){
+   sNode *curr = L ;
+   size_t len = 0;
+   
+   while (curr != NULL) {
+      ++len;
+      curr = curr->next;
+   }
+ return len;
+}
+
+Q2.2
+
+sNode *listRev (sNode * L){
+sNode * temp = NULL;
+sNode * curr = L;
+sNode * next = NULL;
+sNode * final = NULL;
+
+while (curr != NULL){
+    if (curr->next == NULL){
+        final = curr;
+    }
+    next = curr->next;
+    curr->next = temp;
+    temp = curr;
+    curr = next;
+
+}
+return final;
+}

@@ -1,0 +1,104 @@
+Q1.1 --> 
+struct time sec2hms( int secs) {
+    struct time fin;
+   int  rem;
+
+   fin.hr = secs / 3600;
+   rem = secs % 3600;
+   fin.min = rem / 60;
+   fin.sec = rem % 60;
+return fin;
+}
+------------------------------------------------------------------------------------------------------------------
+
+Q1.2 -->
+void readPeople( person* a[], FILE* f )
+{
+   char *buff = NULL ;
+   size_t len ;
+   size_t cnt = 0 ;
+   int start = 0;
+   int end = 2;
+   int pos = 0;
+
+   person *names = malloc(1024);
+   while( getline( &buff, &len, f ) > 1 )
+   {
+
+      // We read a last name (with the newline)
+      // - get memory for person
+      // - append to array
+      // - read next 2 lines, fill it in
+     buff [strlen(buff) - 1] = '\0';
+
+      if ( cnt == start ){
+     strcpy(names->last,buff);
+      ++cnt ;
+   }else if (cnt == start + 1) {
+   strcpy(names->first,buff);
+   ++cnt ;
+} else if (cnt == end){
+   names->age= atoi(buff);
+    *(a+pos)= names;
+//  printf("%s , %s, %d\n",(*(*(a+pos))).first,(*(*(a+pos))).last,(*(*(a+pos))).age);
+
+      start = cnt +1;
+      end = start + 2;
+      ++cnt;
+      ++pos;
+ names = malloc(1024);
+}
+
+   }
+free(names);
+   free( buff ) ;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q1.3
+
+
+Q2.1 -->
+
+size_t listLength( const sNode *L ){
+   sNode *curr = L ;	
+	size_t len = 0;
+    
+	while (curr != NULL) {
+      ++len; 
+		curr = curr->next;
+	} 
+ return len;
+}
+
+size_t listLength( const sNode *L ){
+   sNode *curr = L ;
+   size_t len = 0;
+   
+   while (curr != NULL) {
+      ++len;
+      curr = curr->next;
+   }
+ return len;
+}
+
+Q2.2 -->
+
+sNode *listRev (sNode * L){
+	sNode * temp = NULL;
+	sNode * curr = L;
+	sNode * next = NULL;
+sNode * final = NULL;
+
+while (curr != NULL){
+    if (curr->next == NULL){
+        final = curr;
+    }
+    next = curr->next;
+    curr->next = temp;
+    temp = curr;
+    curr = next;
+
+}
+return final;
+}

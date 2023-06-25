@@ -1,0 +1,15 @@
+#!/bin/bash
+#check if there are exactly two cmd args
+if [ $# != 2 ]; then
+   echo "Usage: $0 <extension to change> <new extension>"
+	exit 2
+fi
+#store the two arguments
+old=$1
+new=$2
+#loop through all the files in the current directory
+ls -1a "$PWD" | while read file ; do 
+	if [[ $file == *$old ]]; then 
+		mv "$file" "${file%$old*}$new" 
+	fi
+done

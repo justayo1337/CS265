@@ -1,0 +1,83 @@
+#!/bin/bash 
+
+#function to display usage for users
+function usage() {
+	echo "usage: $0 [-f filename ] [start_directory] measurement"
+	exit 2
+}
+
+#check is the user-entered directory exists
+function checkDir(){
+[[ ! -e "$1" ]] && echo "Directory does not exist!" && exit 2  
+[[ ! -r "$1" ]] && echo "Unable to access directory" && exit 2 
+}
+
+#check if the file exists in the current dir
+function checkFile() {
+	[[ ! -e "$1" ]] && return 0 
+   [[ -e "$1" ]] && return 1
+}
+
+function checkMetric() {
+	(( totals+=$(cat "$1" | grep "$measurement" | cut -d " " -f2))) 2> /dev/null
+}
+
+#traverse through the subdirectories
+function traverseSub() {
+
+for file in $(ls -1A "$1" 2>/dev/null); do
+	   dir_or_f="$1/$file"
+		if [[ -d "$dir_or_f" ]] ; then
+			traverseSub "$dir_or_f"
+		elif [[ "$dir_or_f" == "$1/$filename" ]] ; then
+			checkMetric $dir_or_f
+			
+		else 
+			continue	
+		fi
+		done
+}
+
+
+
+#check the number of arguments put in
+(( $# == 0 )) && usage
+
+#create default vars
+measurements=( "bear" "dromedary" "aardvark" "genet" "lemur" )
+filename=".KS_Dir"
+startDir="$PWD"
+totals=0
+
+#loop though the options that are set and do something if -f is set
+while getopts "f:" opts; do
+	case "$opts" in
+	f) filename="$OPTARG";;
+	\?) usage;; 
+esac
+done 
+
+shift $((OPTIND-1))
+# check all the remaining arguments to make sure measurement is used 
+  if (( $# == 2 ))
+  then
+    startDir="$1"
+    measurement="$2"
+  
+  elif (( $#==1 )) 
+  then 
+  	measurement="$1"
+  else 
+	usage
+  fi
+  if [[ !  "${measurements[*]}" =~ "$measurement" ]] ; then	
+  	usage
+  fi	
+
+
+checkDir $startDir
+checkFile "$startDir/$filename"
+exists=$?
+
+traverseSub $startDir
+echo "$measurement $totals"

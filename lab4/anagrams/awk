@@ -1,0 +1,19 @@
+
+
+
+
+#
+#
+#
+}
+}
+$1 != prev {
+# EDITOR:  tabstop=2, cols=120
+END {
+#		given 2 columns, puts all 2nd cols on the same line, if first column is the same, and records are adjacent
+	if( NR > 1 )
+	prev = $1
+		printf "\n"
+	printf "\n"
+{ printf "%s ", $2 }
+# squash.awk

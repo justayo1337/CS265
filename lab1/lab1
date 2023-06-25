@@ -1,0 +1,60 @@
+Q2 --> The result of the command changing the second command we entered previously from 'echo Line To' to 'echo Line
+Two' which then leads the command to show 'Line Two' rather than 'Line To' in the command line
+
+Q3 --> This command changes the result of the third command we ran from 'line Three' to 'Line Three'; '~' capitalises
+the 'l' in line in the original command run
+
+
+Q4 --> This command lists all the files in my lab1 directory and shows the 'funny' and 'hello.bash' files I copied from the
+course directory with the same permissions. The bash file is also color coded in green as it is executable permissions
+for the file owner.
+
+Q5 --> running the 'chmod 644 some_file' command gives the file owner read and write permissions, the group is given the
+read permission and this the same for all others who try to acces the file and are not the owner or a part of the group.
+
+Q6 --> running the 'chmod 755 some_file' command gives the file owner read, write and execute permissions; gives the
+group and all other users the the read and execute permissions.
+
+Q7 --> I can still read my funny file as the permissions still give me read permissions.
+
+Q8 -->  I can still read my hello.bash file as the permissions still give me read permissions.
+
+Q9 --> No, I am unable to execute the bash file as the 'chmod 644' command removed the execute permission from the file
+for my user.
+
+Q10 --> One way to give my self permissions would be to use 'chmod +x hello.bash' or 'chmod 744 hello.bash' to give my
+user execute permissions and then I would be able to run the script thereafter.
+
+Q11 --> I am unable to save the file as I normally would given that I only have read permissions and thereby would have
+to override using something like ':w!' in vi/vim in order to try to save the file.
+
+Q12 --> The outputs are as follows:
+			-> ls * --> This command lists all the files in the current working directory exceot the hidden files. 
+			-> ls a* --> this displays all the files that start with the letter 'a' without any care about the remaining
+			letters that come after. This lists only the two files with annoy in their filenames.
+			-> ls *m* --> this lists the filenames which contain an 'm' anywhere within them; this includes something
+			like'itemList'
+			-> ls anno? --> this command only lists files which contain 'anno' and one extra letter/number in the field
+			after 'anno'. Soimething like annoy or anno1 or annos would be listed if it exists as it follows the rules
+			around the length that omes with using the '?'. Something like annoy.cc would not be shown as it is has more
+			than one extra character after the 'anno'.
+			
+			-> ls annoy? --> this presented an error in my directory as I had no files that had just one letter or number
+			after the 'annoy' . The error reads 'ls: cannot access 'annoy?': No such file or directory' which means there
+			are not files which match the pattern in the directory.
+
+Q13 --> Two files are created; one with the name 'a' and the other named 'space'. When I try to save the 'a' file it
+tells me there is a second file to deal with before quitting.
+
+Q14 --> The descriptions are as follows:
+
+		-> -h --> this also refers to --human-readable and is used with the -l flag and allows for the file sizes to be
+		displayed in a method that's easier for the users suchas 234M to mean 234 megabytes rather than the default method
+		where the numbers are just displayed 
+		-> -l --> use a long listing format; this lists the files in a directory with a little more information like the
+		permissions and last edit date. 
+		-> -t --> this allows for sorting the files in a directory by the last modification starting from the newest to
+		the oldest. 
+		-> -A --> This stands for almost all, which does not list the implied directories '.' and '..' that are normally
+		listed when -a is used.
+		-> -d --> this lists directories themselves, not their contents

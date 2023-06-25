@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Expires" content="no-expire">
+	<meta name="Author" content="Kurt Schmidt"><meta name="Copyright" content="">
+	<meta name="Publisher" content="Drexel University">
+	<meta name="Keywords" content="Programming Techniques Unix">
+	<meta name="Description"
+		content="Lab for CS265 - Adv. Programming Techniques">
+	<meta name="Pagetype" content="Lab">
+	<meta name="Audience" content="All">
+	<link rel='shortcut icon' type='image/gif'
+		href='../../../images/drexel.gif'></link>
+	<script language="JavaScript" src="../../courseInfo.js"></script>
+	<script language="JavaScript" src="../../../Scripts/courseFormat.js"></script>
+	<title> Lab -- C Strings </title>
+	<link href="../labs.css" rel="stylesheet" type="text/css">
+</head>
+
+<body text="#330099" link="#000066" vlink="#000066" alink="#ff0000"
+	background="../../../images/blueTexture.jpeg">
+
+<h1> Lab &ndash; C Strings </h1>
+
+<p kurt='fool'> The directory for this lab is <span class='fn'>~kschmidt/public_html/CS265/Labs/C</span> . </p>
+
+
+<h3> Introduction </h3>
+
+<p> We will test your code using the <span class='cmd'>gcc</span> compiler. </p>
+
+<!-- TODO -->
+
+<h3> The Exercises </h3>
+
+<ol>
+	<li>
+		<p> Write a function, <span class='code'>capitalise</span>, which takes a null-terminated string (<span
+			class='code'>char*</span>), and replaces each lower-case letter with its upper-case counterpart. </p>
+
+		<p> In <span class='fn'>ctype.h</span> find functions which might help you: </p>
+
+		<div class='code'>
+<pre>int isalpha( char ) ;
+int islower( char ) ;
+int toupper( char ) ;</pre>
+		</div> 
+
+		<p> You may not use square brackets, <span class='code'>[]</span>, anyhwere in your function (other than in
+			comments). </p>
+
+		<script><!--
+			q = "Place your function, with function header comments, in your labsheet, with formatting.\n"
+			q += "Consider Vim's <span class='cmd'>:r</span> (read) command, or use Bash redirect/append."
+			question( q ) 
+			//--></script>
+	</li>
+
+	<li>
+		<p> Write a program, <span class='code'>circle.c</span>, which expects two command-line arguments, a name (as a
+			string), and a radius (as a double).  You will then print the circle's name and area, as demonstrated below. </p>
+
+		<p> If the number of command-line arguments is not right, print an appropriate message to <span
+			class='code'>stderr</span>, and return a non-zero status.  You may assume that if 2 arguments are supplied, the
+			2nd argument will be safely converted to a <span class='code'>double</span>. </p>
+
+		<p> In <span class='fn'>stdlib.h</span> find <span class='code'>strtod</span> which will parse the double for you.
+			Use the <b>man</b> pages to see its use.  This function replaces the older <span class='code'>atof</span>
+			function.  </p>
+
+		<p> <strong>Do not</strong> approximate Pi yourself.  Use the language to calculate it, or use <span
+		class='code'>M_PI</span>, defined in <span class='fn'>math.h</span> . </p>
+
+		<p> Print the area using scientific notation, with 4 significant digits.
+
+		<p> Here are some example runs: </p>
+
+		<div class='cli'>
+<pre>$ ./circle "The Hulk"
+Need 2 arguments, a name and a radius.
+
+$ ./circle Samwise 17.3
+Samwise, your area is 9.402e+02 units square
+
+$</pre>
+		</div>
+
+		<script><!--
+			q = "Submit this program separate from your labsheet."
+			question( q ) 
+			//--></script>
+	</li>
+
+</ol>
+</body></html>
